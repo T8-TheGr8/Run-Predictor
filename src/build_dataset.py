@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from extract_features import extract_features
+from extract_run_features import extract_run_features
  
 RAW_DIR = "data/raw/"
  
@@ -24,7 +24,7 @@ def build_dataset():
  
         try:
             # Extract features from GPX
-            features = extract_features(gpx_path)
+            features = extract_run_features(gpx_path)
             features["filename"] = filename
             features["label"] = label
             all_rows.append(features)
